@@ -3,6 +3,7 @@ import e from "express";
 import cors from "cors";
 import { couponRouter } from "./routes/publicRoutes.js";
 import { setBrowserFingerprint } from "./middlewares/browserFingerprint.middleware.js";
+import { adminRouter } from "./routes/adminRoutes.js";
 
 const app = e();
 
@@ -19,6 +20,7 @@ app.use(setBrowserFingerprint)
 
 // routes
 app.use("/api/coupons", couponRouter)
+app.use("/api/admin", adminRouter)
 
 app.use((err, req, res, next) => {
   console.error(err.stack);

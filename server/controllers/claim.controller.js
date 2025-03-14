@@ -3,7 +3,6 @@ import { Coupon } from "../models/coupon.model.js";
 
 const claimCoupon = async (req, res) => {
     try {
-        console.log(req.headers.origin)
         const ip = req.ip
         const browserFingerprint = req.cookies.browserFingerPrint || 'unknown';
 
