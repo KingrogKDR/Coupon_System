@@ -1,5 +1,6 @@
 import React from 'react';
 import CouponClaim from '../components/CouponClaim';
+import { Link } from 'react-router-dom';
 
 const HomePage = () => {
   return (
@@ -12,6 +13,10 @@ const HomePage = () => {
           <p className="text-gray-600">
             Claim your exclusive coupon and save on your next purchase!
           </p>
+        </div>
+        <div className='flex justify-center gap-3 items-center'>
+            <p>An admin?</p>
+            <Link to="/admin" className='shadow-md px-4 py-2 rounded-2xl hover:text-white hover:bg-black hover:scale-110 transition ease-in duration-300' >Go To Admin</Link>
         </div>
         <CouponClaim />
       </div>
