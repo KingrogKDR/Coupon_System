@@ -19,7 +19,6 @@ export const claimCoupon = async () => {
             data: response.data
         }
     } catch (error) {
-        console.log(error.response?.data?.message)
         return {
             success: false,
             message: error.response?.data?.message || "Error claiming coupon"
@@ -35,7 +34,6 @@ export const getAllCouponsApi = async () => {
             data: response.data
         }
     } catch (error) {
-        console.log(error.response?.data?.message)
         return {
             success: false,
             message: error.response?.data?.message || "Error claiming coupon"
@@ -51,7 +49,6 @@ export const checkAdminApi = async () => {
             data: response.data
         }
     } catch (error) {
-        console.log(error.response?.data?.message)
         return {
             success: false,
             message: error.response?.data?.message || "Error in checking admin api"
@@ -70,7 +67,6 @@ export const createAdminApi = async (username, password) => {
             data: response.data
         }
     } catch (error) {
-        console.log(error.response?.data?.message)
         return {
             success: false,
             message: error.response?.data?.message || "Error in creating admin api"
@@ -89,7 +85,6 @@ export const loginAdmin = async(username, password) => {
             data: response.data
         }
     } catch (error) {
-        console.log(error.response?.data?.message)
         return {
             success: false,
             message: error.response?.data?.message || "Error in loggin as admin"
@@ -105,7 +100,6 @@ export const addCoupon = async(newCoupon) => {
             data: response.data
         }
     } catch (error) {
-        console.log(error.response?.data?.message)
         return {
             success: false,
             message: error.response?.data?.message || "Error in adding coupon"
@@ -121,7 +115,6 @@ export const updateCouponApi = async(newCoupon, id) => {
             data: response.data
         }
     } catch (error) {
-        console.log(error.response?.data?.message)
         return {
             success: false,
             message: error.response?.data?.message || "Error in updating coupon"
@@ -137,7 +130,6 @@ export const deleteCouponApi = async(id) => {
             data: response.data
         }
     } catch (error) {
-        console.log(error.response?.data?.message)
         return {
             success: false,
             message: error.response?.data?.message || "Error in updating coupon"
@@ -153,7 +145,6 @@ export const getClaimLogsApi = async () => {
             data: response.data
         }
     } catch (error) {
-        console.log(error.response?.data?.message)
         return {
             success: false,
             message: error.response?.data?.message || "Error claiming coupon"

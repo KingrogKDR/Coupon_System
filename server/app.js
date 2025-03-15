@@ -7,7 +7,6 @@ import { adminRouter } from "./routes/adminRoutes.js";
 
 const app = e();
 
-console.log(process.env.CLIENT_URL)
 
 app.use(e.json());
 app.use(cookieParser());
