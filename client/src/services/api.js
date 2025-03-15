@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = `${import.meta.env.VITE_API_URL}/api`;
+const API_URL = ${import.meta.env.VITE_API_URL};
 
 const api = axios.create({
     baseURL: API_URL,
@@ -12,7 +12,7 @@ const api = axios.create({
 
 export const claimCoupon = async () => {
     try {
-        const response = await api.get("/coupons/claim")
+        const response = await api.get("/api/coupons/claim")
         return {
             success: true,
             data: response.data
@@ -27,7 +27,7 @@ export const claimCoupon = async () => {
 
 export const getAllCouponsApi = async () => {
     try {
-        const response = await api.get("/admin/coupons")
+        const response = await api.get("/api/admin/coupons")
         return {
             success: true,
             data: response.data
@@ -42,7 +42,7 @@ export const getAllCouponsApi = async () => {
 
 export const checkAdminApi = async () => {
     try {
-        const response = await api.get('/admin/setup/check-admin');
+        const response = await api.get('/api/admin/setup/check-admin');
         return {
             success: true,
             data: response.data
@@ -57,7 +57,7 @@ export const checkAdminApi = async () => {
 
 export const createAdminApi = async (username, password) => {
     try {
-        const response = await api.post("/admin/setup/create-admin",{
+        const response = await api.post("/api/admin/setup/create-admin",{
             username, 
             password
         })
@@ -75,7 +75,7 @@ export const createAdminApi = async (username, password) => {
 
 export const loginAdmin = async(username, password) => {
     try {
-        const response = await api.post("/admin/login", {
+        const response = await api.post("/api/admin/login", {
             username,
             password
         })
@@ -93,7 +93,7 @@ export const loginAdmin = async(username, password) => {
 
 export const addCoupon = async(newCoupon) => {
     try {
-        const response = await api.post("/admin/coupons", newCoupon)
+        const response = await api.post("/api/admin/coupons", newCoupon)
         return {
             success: true,
             data: response.data
@@ -108,7 +108,7 @@ export const addCoupon = async(newCoupon) => {
 
 export const updateCouponApi = async(newCoupon, id) => {
     try {
-        const response = await api.put(`/admin/coupons/${id}`, newCoupon)
+        const response = await api.put(`/api/admin/coupons/${id}`, newCoupon)
         return {
             success: true,
             data: response.data
@@ -123,7 +123,7 @@ export const updateCouponApi = async(newCoupon, id) => {
 
 export const deleteCouponApi = async(id) => {
     try {
-        const response = await api.delete(`/admin/coupons/${id}`)
+        const response = await api.delete(`/api/admin/coupons/${id}`)
         return {
             success: true,
             data: response.data
@@ -138,7 +138,7 @@ export const deleteCouponApi = async(id) => {
 
 export const getClaimLogsApi = async () => {
     try {
-        const response = await api.get("/admin/claims")
+        const response = await api.get("/api/admin/claims")
         return {
             success: true,
             data: response.data
