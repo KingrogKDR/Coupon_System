@@ -11,7 +11,7 @@ app.use(e.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: 'https://coupon-system-dusky.vercel.app',
+    origin: process.env.CLIENT_URL,
     methods: 'GET,POST,PUT,PATCH,DELETE',
     credentials: true,
   })
