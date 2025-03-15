@@ -35,5 +35,4 @@ AdminSchema.pre("save", async function (next) {
 AdminSchema.methods.comparePassword = async function (candidatePassword) {
   return await compare(candidatePassword, this.password);
 };
-
 export const Admin = mongoose.model("Admin", AdminSchema);

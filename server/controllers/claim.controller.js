@@ -21,22 +21,25 @@ const claimCoupon = async (req, res) => {
             ip,
             browserFingerprint,
             timestamp: new Date(),
+            name: `User-${Math.random().toString(36).substring(7)}`, // generates random name
         }
 
         await coupon.save();
 
         await ClaimLog.create({
+            user: coupon.assignedTo.name,
             ip, 
             browserFingerprint,
             couponId: coupon._id,
-            couponCode: coupon.code
+            couponCode: coupon.code,
+            expiryDate: coupon.expiryDate,
         })
 
         res.json({
             code: coupon.code,
             description: coupon.description,
             discountAmount: coupon.discountAmount,
-            expiry: coupon.expiryDate
+            expiryDate: coupon.expiryDate
         })
 
     } catch (error) {

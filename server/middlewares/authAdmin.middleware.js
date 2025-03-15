@@ -3,7 +3,7 @@ import { Admin } from "../models/admin.model.js";
 
 const authAdminMiddleware = async (req, res, next) => {
     try {
-        const token = await req.cookies.jsonWebToken;
+        const token = await req.header('x-auth-token');
     
         if(!token){
             return res.status(401).json({

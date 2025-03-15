@@ -12,7 +12,6 @@ const CouponClaim = () => {
     setError(null);
     try {
       const result = await claimCoupon();
-      console.log(result)
       if (result.success) {
         setCoupon(result.data);
         setClaimed(true);

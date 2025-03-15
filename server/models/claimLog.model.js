@@ -1,6 +1,10 @@
 import mongoose from "mongoose";
 
 const ClaimLogSchema = new mongoose.Schema({
+    user:{
+        type: String,
+        required: true,
+    },
     ip: {
         type: String,
         required: true,
@@ -16,6 +20,10 @@ const ClaimLogSchema = new mongoose.Schema({
     },
     couponCode: {
         type: String,
+        required: true,
+    },
+    expiryDate:{
+        type: Date,
         required: true,
     },
     timestamp: {

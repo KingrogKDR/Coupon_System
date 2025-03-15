@@ -18,7 +18,7 @@ const AdminSetup = () => {
     const checkAdmin = async () => {
       try {
         const res = await checkAdminApi();
-        setAdminExists(res.data.adminExists);
+        setAdminExists(res.data?.adminExists);
         
         if (res.data.adminExists) {
           navigate('/admin/login');
@@ -52,8 +52,7 @@ const AdminSetup = () => {
     
     try {
       setLoading(true);
-      const data = await createAdminApi(formData.username, formData.password);
-      console.log(data)
+      await createAdminApi(formData.username, formData.password);
       
       navigate('/admin/login', { state: { message: 'Admin created successfully. Please log in.' } });
     } catch (err) {
