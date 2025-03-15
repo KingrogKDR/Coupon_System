@@ -1,0 +1,22 @@
+# nixpacks.toml configuration for MERN stack application
+
+[phases.setup]
+nixPkgs = ["nodejs", "nodejs.npm", "mongodb-tools"]
+
+[phases.install]
+cmds = [
+  "cd server && npm install",
+  "cd client && npm install"
+]
+
+[phases.build]
+cmds = [
+  "cd client && npm run build",
+  "cd server && npm install --production"
+]
+
+[start]
+cmd = "cd server && npm start"
+
+[variables]
+NODE_ENV = "production"
