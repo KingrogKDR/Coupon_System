@@ -109,15 +109,6 @@ const AdminLogin = () => {
             </button>
           </div>
         </form>
-        
-        <div className="mt-6 text-center">
-          <p className="text-sm text-gray-600">
-            Need to create an admin account?{' '}
-            <a href="/admin/setup" className="text-blue-500 hover:text-blue-700">
-              Go to setup
-            </a>
-          </p>
-        </div>
       </div>
     </div>
   );
