@@ -4,7 +4,8 @@ import { Coupon } from "../models/coupon.model.js";
 const claimCoupon = async (req, res) => {
     try {
         const ip = req.ip
-        const browserFingerprint = req.cookies.browserFingerPrint || 'unknown';
+        const newFingerPrint = Math.random.toString(36).substring(2,15) +  Math.random.toString(36).substring(2,15)
+        const browserFingerprint = req.cookies.browserFingerPrint || newFingerPrint;
 
         const coupon  = await Coupon.findOne({
             isActive: true,
